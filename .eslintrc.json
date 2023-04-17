@@ -1,0 +1,179 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "react-app",
+    "react-app/jest",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "plugins": [
+    "jest",
+    "react"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "tsconfig.json"
+    ]
+  },
+  "ignorePatterns": [
+    "**/*.json",
+    "**/*.ttf",
+    "src/index.css"
+  ],
+  "rules": {
+    "dot-notation": "warn",
+    "eqeqeq": 2,
+    "id-blacklist": [
+      "error"
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "no-debugger": "warn",
+    "curly": "error",
+    "no-multi-assign": "error",
+    "no-return-await": "warn",
+    "import/no-namespace": [
+      "warn",
+      {
+        "ignore": [
+          "yup"
+        ]
+      }
+    ],
+    "no-constant-condition": "warn",
+    "no-duplicate-imports": "warn",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@mui/material",
+            "message": "Tree-shaking is enforced for @mui/material, import individual files instead (e.g. import Grid from '@mui/material/Grid')"
+          },
+          {
+            "name": "styled-components",
+            "message": "Please import from 'styled-components/macro' instead"
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/await-thenable": "warn",
+    "@typescript-eslint/no-unnecessary-type-assertion": "warn",
+    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/no-empty-interface": "warn",
+    "@typescript-eslint/no-unnecessary-condition": "warn",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/ban-types": [
+      "warn",
+      {
+        "types": {
+          "React.MouseEvent": "Use React.MouseEventHandler instead.",
+          "React.ChangeEvent": "Use React.ChangeEventHandler instead.",
+          "React.FormEvent": "Use React.FormEventHandler instead.",
+          "React.FC": "Do not use this type",
+          "React.FunctionComponent": "Do not use this type",
+          "React.PropsWithChildren": "Do not use this type",
+          "MouseEvent": "Use MouseEventHandler instead.",
+          "ChangeEvent": "Use ChangeEventHandler instead.",
+          "FormEvent": "Use FormEventHandler instead."
+        },
+        "extendDefaults": true
+      }
+    ],
+    "no-var": "error",
+    "one-var": [
+      "error",
+      "never"
+    ],
+    "prefer-const": "warn",
+    "prefer-arrow-callback": "warn",
+    "complexity": [
+      "warn",
+      15
+    ],
+    "@typescript-eslint/array-type": [
+      "warn",
+      {
+        "default": "array-simple"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "args": "after-used",
+        "varsIgnorePattern": "^dirtyFields$"
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "typeLike",
+        "format": [
+          "PascalCase"
+        ]
+      }
+    ],
+    "react/no-unstable-nested-components": "error",
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "shorthandLast": true
+      }
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never"
+      }
+    ],
+    "react/jsx-boolean-value": 1,
+    "react/jsx-no-useless-fragment": [
+      "warn",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "react/prop-types": 0,
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "no-restricted-globals": [
+      "error",
+      {
+        "name": "screen",
+        "message": "Import screen from '@testing-library/react'"
+      }
+    ],
+    "jest/consistent-test-it": [
+      "warn",
+      {
+        "fn": "test",
+        "withinDescribe": "test"
+      }
+    ],
+    "jest/prefer-to-have-length": "warn",
+    "jest/no-focused-tests": "warn",
+    "import/no-internal-modules": [
+      "error",
+      {
+        "forbid": [
+          "**/responses/*"
+        ]
+      }
+    ]
+  },
+  "overrides": []
+}
