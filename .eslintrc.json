@@ -123,6 +123,7 @@
       }
     ],
     "react/no-unstable-nested-components": "error",
+    "react/no-unescaped-entities": 0,
     "react/jsx-sort-props": [
       "warn",
       {
