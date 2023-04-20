@@ -1,3 +1,4 @@
+import { MinusSmallIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 
 import { ResumeDetail } from '../../constants/resume';
@@ -38,7 +39,14 @@ const TimelineSection = ({ job }: Props) => {
         </h2>
         <TimelineTitle className="md:hidden" date={job.dates} />
         <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          {job.duties[0]}
+          <ul>
+            {job.duties.map((duty, index) => (
+              <li className="mt-2 flex" key={index}>
+                <MinusSmallIcon className="h-6 w-6 flex-none" />
+                {duty}
+              </li>
+            ))}
+          </ul>
         </p>
       </div>
       <TimelineTitle className="mt-1 hidden md:block" date={job.dates} />
