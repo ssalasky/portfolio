@@ -4,6 +4,7 @@ import { forwardRef, ReactNode } from 'react';
 interface Props {
   children?: ReactNode;
   className?: string;
+  style?: object;
 }
 
 const OuterContainer = forwardRef<HTMLDivElement, Props>(

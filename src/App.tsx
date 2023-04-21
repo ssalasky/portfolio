@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import Container from './components/Container';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header';
 import About from './pages/about';
 import Home from './pages/home';
@@ -22,6 +23,7 @@ const App = () => {
               <Route element={<Portfolio />} path="/portfolio" />
             </Routes>
           </Container>
+          <Footer />
         </div>
       </Router>
     </Suspense>
