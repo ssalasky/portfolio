@@ -7,13 +7,8 @@ const Hobby = (hobby: HobbyType) => {
         {hobby.name}
       </h2>
       <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        {hobby.goal}
+        Goal: {hobby.goal}
       </p>
-      {hobby.tools && (
-        <p className="mt-2 text-sm font-medium text-zinc-600 dark:text-zinc-400">
-          Tools: {hobby.tools.join(', ')}
-        </p>
-      )}
     </article>
   );
 };

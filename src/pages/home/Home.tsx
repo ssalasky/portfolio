@@ -3,9 +3,11 @@ import _ from 'lodash';
 
 import Container from '../../components/Container';
 import Hobby from '../../components/Hobby';
+import List from '../../components/List';
 import SocialLinks from '../../components/SocialLinks';
 import { HOBBIES } from '../../constants/hobbies';
-import CameraPhoto from '../../images/camera.png';
+import { INTERESTS } from '../../constants/interests';
+import CampingPhoto from '../../images/camping.png';
 import DogImage from '../../images/dog.png';
 import Formula1 from '../../images/formula-1.png';
 
@@ -46,38 +48,34 @@ const Home = () => {
           </div>
           <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl -rotate-2">
             <img
-              alt="Photography"
+              alt="Camping"
               className="absolute inset-0 h-full w-full object-cover"
               sizes="(min-width: 640px) 18rem, 11rem"
-              src={CameraPhoto}
+              src={CampingPhoto}
             />
           </div>
         </div>
       </div>
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-8">
+            <h2 className="flex text-2xl font-medium text-zinc-900 dark:text-zinc-100">
+              Hobbies
+            </h2>
             {_.map(HOBBIES, hobby => (
               <Hobby {...hobby} />
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-              <div className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              <div className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100 border-b-2 border-zinc-50 dark:border-zinc-700/80">
                 <MagnifyingGlassIcon className="h-6 w-6 flex-none" />
-                <span className="ml-3">Topics I'm Exploring</span>
+                <span className="ml-3 mb-2">Topics I'm Exploring</span>
               </div>
               <ul className="mt-6 space-y-4">
-                <li className="flex gap-4">
-                  <dl className="flex flex-auto flex-wrap gap-x-2">
-                    <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                      RedwoodJS
-                    </dd>
-                    <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                      A quick prototyping JamStack framework for JavaScript.
-                    </dd>
-                  </dl>
-                </li>
+                {_.map(INTERESTS, interest => (
+                  <List item={interest} key={interest.name} />
+                ))}
               </ul>
             </div>
           </div>
